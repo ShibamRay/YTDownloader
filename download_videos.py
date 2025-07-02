@@ -16,15 +16,15 @@ def download_video(url, output_path):
         }
         with ytdlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
-        print(f"✅ Downloaded: {url}")
+        print(f"Downloaded: {url}")
     except Exception as e:
-        print(f"❌ Failed to download {url}: {e}")
+        print(f"Failed to download {url}: {e}")
 
 # Function to read CSV and download videos
 def download_videos_from_csv(csv_file, output_path):
     with open(csv_file, newline='', encoding='utf-8-sig') as file:
         reader = csv.DictReader(file)
-        print("📄 CSV Headers:", reader.fieldnames)
+        print("CSV Headers:", reader.fieldnames)
 
         for index, row in enumerate(reader, start=1):
             link = row['link'].strip()
@@ -33,11 +33,11 @@ def download_videos_from_csv(csv_file, output_path):
                 print(f"\n🔹 ({index}) Processing link: {link}")
                 download_video(link, output_path)
             else:
-                print(f"⚠️ ({index}) Skipped non-YouTube link: {link}")
+                print(f"({index}) Skipped non-YouTube link: {link}")
 
 # File paths
-csv_file = 'nxt2.csv'
-output_path = './nxtV2'
+csv_file = 'csv_video_links.csv'
+output_path = './YTVideo'
 
 # Create output directory if it doesn't exist
 if not os.path.exists(output_path):

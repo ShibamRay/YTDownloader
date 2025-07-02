@@ -4,8 +4,8 @@ import string
 import csv
 
 # 🔧 Configure this:
-VIDEO_FOLDER = './nxtV2'
-OUTPUT_CSV = 'next.csv'
+VIDEO_FOLDER = './YTVideo'
+OUTPUT_CSV = 'Video_Links.csv'
 VIDEO_EXTENSIONS = ['.mp4', '.mov', '.mkv', '.avi']
 
 def generate_random_name(length=12):
